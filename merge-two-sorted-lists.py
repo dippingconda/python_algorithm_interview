@@ -9,7 +9,7 @@ class Node:
         self.next = None
 
 
-def merge(list_1: Node, list_2: Node):
+def merge(list_1: Node, list_2: Node) -> Node:
     if (not list_1) or (list_2 and list_1.data > list_2.data):
         list_1, list_2 = list_2, list_1
 

@@ -24,7 +24,6 @@ def swap_pair(linked: Node) -> Node:
     return root.next
 
 
-
 if __name__ == '__main__':
     test_case = Node(1)
     test_case.next = Node(2)

@@ -6,16 +6,13 @@ from typing import List
 
 def daily_temp(temperatures: List[int]) -> List[int]:
     idx_stack = []
-    temp_stack = []
     result = [0] * len(temperatures)
     for idx, temp in enumerate(temperatures):
-        while temp_stack and temp > temp_stack[-1]:
+        while idx_stack and temp > temperatures[idx_stack[-1]]:
             last_idx = idx_stack.pop()
             result[last_idx] = idx - last_idx
-            temp_stack.pop()
 
         idx_stack.append(idx)
-        temp_stack.append(temp)
 
     return result
 

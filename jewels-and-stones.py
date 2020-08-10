@@ -18,7 +18,18 @@ def jewels_stones(target: str, jewels: str) -> int:
     return cnt_jewel
 
 
+def solution(target:str, jewels: str) -> int:
+    from collections import Counter
+    freq = Counter(target)
+    cnt = 0
+    for jewel in jewels:
+        cnt += freq[jewel]
+
+    return cnt
+
+
 if __name__ == '__main__':
     test_case = "aAAbbbb"
     jewels = "aA"
     print(f'{jewels_stones(test_case, jewels)}')
+    print(f'{solution(test_case, jewels)}')

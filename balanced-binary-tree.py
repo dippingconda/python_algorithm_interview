@@ -46,7 +46,8 @@ def is_balanced(root: TreeNode) -> bool:
         left = dfs(node.left)
         right = dfs(node.right)
 
-        if abs(left - right) > 1:
+        if abs(left - right) > 1 or \
+                left == -1 or right == -1:
             return -1
 
         return max(left, right) + 1
